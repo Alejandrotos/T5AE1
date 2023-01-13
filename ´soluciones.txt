@@ -9,3 +9,14 @@ echo "El nom introduit no existeix"
 else
 echo "El nom esta bé s'ha connectat $lin vegades"
 fi
+
+Parte 2:
+#!/bin/bash
+echo -n "Introdueix el nom d'un mes: "
+read mes
+if ( grep -q $mes usuarios.txt )
+then
+grep $mes usuarios.txt | awk '{print $2}'
+else
+echo "0"
+fi
